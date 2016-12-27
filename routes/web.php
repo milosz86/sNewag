@@ -12,15 +12,13 @@
 */
 
 
-Route::get('/', ['middleware' => ['auth', 'admin'], function() {
-    return "Jesteś zalogowany jako Admin";
-}]);
+
 
 
 Route::group(['middleware' => ['auth', 'admin']], function () {
 
        Route::resource('/nerds', 'NerdController');
-
+       Route::get('/', function() {return View('welcome'); });
        });
 
 Auth::routes();
