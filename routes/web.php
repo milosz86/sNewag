@@ -10,9 +10,11 @@
 | to using a Closure or controller method. Build something great!
 |
 */
-Route::get('/', function () {return view('welcome');
 
-});
+
+Route::get('/', ['middleware' => ['auth', 'admin'], function() {
+    return "Jesteś zalogowany jako Admin";
+}]);
 
 
 Route::group(['middleware' => ['auth', 'admin']], function () {
