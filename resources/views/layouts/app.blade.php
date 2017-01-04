@@ -87,6 +87,20 @@
             </div>
         </nav>
 
+        <!-- will be used to show any messages -->
+
+
+
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 col-md-offset-2">
+                @if (Session::has('message'))
+                    <div class="alert alert-info">{{ Session::get('message') }}</div>
+                @endif  
+                </div>
+            </div>
+        </div>
+
         @yield('content')
     </div>
 

@@ -28,7 +28,7 @@ class Admin
       else{
 
         Session::flash('message', 'Niestety nie posiadasz uprawnien administratora');
-        return Redirect::to('home');
+        return Redirect::to('/');
 
       }
     }
