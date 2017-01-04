@@ -17,10 +17,11 @@
 
 Route::group(['middleware' => ['auth', 'admin']], function () {
 
-       Route::resource('/nerds', 'NerdController');
-       Route::get('/', function() {return View('welcome'); });
-       });
+Route::get('/', function() {return View('welcome'); });
+
+ });
 
 Auth::routes();
+Route::resource('/services', 'ServiceController');
 
 Route::get('/home', 'HomeController@index');
