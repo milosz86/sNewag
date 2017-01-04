@@ -132,7 +132,7 @@ class ServiceController extends Controller
             $service->save();
 
             // redirect
-            Session::flash('message', 'Zaktualizowano serwis!');
+            Session::flash('message', 'Zaktualizowano dane serwisu!');
             return Redirect::to('services');
         }
     }
