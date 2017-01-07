@@ -48,8 +48,7 @@
                       <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Serwisy<span class="caret"></span></a>
                       <ul class="dropdown-menu">
                         <li><a href="{{ URL::to('services') }}">Wszystkie serwisy</a></li>
-                        <li><a href="{{ URL::to('services/create') }}">Dodaj serwis</a></li>
-                        <li role="separator" class="divider"></li>
+                        <li><a href="{{ URL::to('services/create') }}">Dodaj serwis</a></li>                  
                       </ul>
                     </li>
 
