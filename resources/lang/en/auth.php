@@ -14,6 +14,6 @@ return [
     */
 
     'failed' => 'Podano błędne dane',
-    'throttle' => 'Zbyt duzo prob logowania. Sprobuj ponownie za :seconds sekund.',
+    'throttle' => 'Zbyt dużo prób logowania. Spróbuj ponownie za :seconds sekund.',
 
 ];
