@@ -21,9 +21,6 @@ Route::group(['middleware' => ['auth', 'admin']], function () {
 Route::resource('/services', 'ServiceController');
  });
 
- 
+
 Route::get('/', function() {return View('welcome'); });
 Auth::routes();
-
-
-Route::get('/home', 'HomeController@index');
