@@ -33,7 +33,17 @@ class User extends Authenticatable
       return true;
     } else {
       return false;
-    } // this looks for an access column in your users table
+    }
 }
+
+public function servicesCheck($a)
+{
+if($a <= $this->access_services){
+  return true;
+} else {
+  return false;
+} // check access_services column in Userstable
+}
+
 
 }

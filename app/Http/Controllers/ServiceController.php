@@ -15,7 +15,11 @@ class ServiceController extends Controller
   public function __construct()
       {
           $this->middleware('auth');
-          $this->middleware('admin')->only('destroy');
+          $this->middleware('services_read')->only(['index' , 'show' ]);
+          $this->middleware('services_create')->only(['create' , 'store' ]);
+          $this->middleware('services_edit')->only(['edit' , 'update' ]);
+          $this->middleware('services_delete')->only('destroy');
+
 
       }
 
