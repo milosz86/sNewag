@@ -12,6 +12,14 @@ use Illuminate\Support\Facades\View;
 
 class ServiceController extends Controller
 {
+  public function __construct()
+      {
+          $this->middleware('auth');
+          $this->middleware('admin')->only('destroy');
+
+      }
+
+
     /**
      * Display a listing of the resource.
      *

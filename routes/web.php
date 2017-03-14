@@ -15,11 +15,13 @@
 
 
 
-Route::group(['middleware' => ['auth', 'admin']], function () {
+//Route::group(['middleware' => ['auth', 'admin']], function () {
+//Route::resource('/services', 'ServiceController');
+//});
 
 
-Route::resource('/services', 'ServiceController');
- });
+
+Route::resource('/services' , 'ServiceController');
 
 
 Route::get('/', function() {return View('welcome'); });
