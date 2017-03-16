@@ -15,12 +15,6 @@
 
 
 
-//Route::group(['middleware' => ['auth', 'admin']], function () {
-//Route::resource('/services', 'ServiceController');
-//});
-
-
-
 Route::resource('/services' , 'ServiceController');
 
 

@@ -37,7 +37,7 @@ class User extends Authenticatable
 }
 
 public function servicesCheck($a)
-{
+{ 
 if($a <= $this->access_services){
   return true;
 } else {
