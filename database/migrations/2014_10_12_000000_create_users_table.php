@@ -17,7 +17,7 @@ class CreateUsersTable extends Migration
             $table->engine = 'InnoDB';
 
             $table->increments('id');
-            $table->integer('service_id')->unsigned()->index();
+            $table->integer('service_id')->unsigned()->index()->default(1);
             $table->foreign('service_id')->references('id')->on('services')->onDelete('cascade');
             $table->string('name');
             $table->string('surname');
