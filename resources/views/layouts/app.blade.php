@@ -48,7 +48,7 @@
                       <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Serwisy<span class="caret"></span></a>
                       <ul class="dropdown-menu">
                         <li><a href="{{ URL::to('services') }}">Wszystkie serwisy</a></li>
-                        <li><a href="{{ URL::to('services/create') }}">Dodaj serwis</a></li>                  
+                        <li><a href="{{ URL::to('services/create') }}">Dodaj serwis</a></li>
                       </ul>
                     </li>
 
@@ -67,6 +67,9 @@
                                 </a>
 
                                 <ul class="dropdown-menu" role="menu">
+
+                                  <li><a href="{{ url('/profile') }}">Profil</a></li>
+
                                     <li>
                                         <a href="{{ url('/logout') }}"
                                             onclick="event.preventDefault();

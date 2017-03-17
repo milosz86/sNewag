@@ -45,5 +45,8 @@ if($a <= $this->access_services){
 } // check access_services column in Userstable
 }
 
+public function service() {
+return $this->belongsTo(Service::class);
+}
 
 }

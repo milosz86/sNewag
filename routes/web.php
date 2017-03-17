@@ -17,6 +17,6 @@
 
 Route::resource('/services' , 'ServiceController');
 
-
+Route::any('profile' , 'ProfileController@show');
 Route::get('/', function() {return View('welcome'); });
 Auth::routes();
