@@ -15,9 +15,13 @@ use Illuminate\Support\Facades\Auth;
 class ProfileController extends Controller
 {
 public function show(){
-$users = User::all();
-return View::make('profile')->with('users' , $users);
-
+//Gets logged user all data:
+$logged = Auth::user();
+//Gets logged user id column value:
+$lid = $logged->id;
+//Gets all data form users table:
+$users = User::where('id', $lid)->get();
+//Returns View
+return view('profile',compact('users','lid'));
 }
-
 }

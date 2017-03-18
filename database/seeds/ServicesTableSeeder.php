@@ -13,7 +13,7 @@ class ServicesTableSeeder extends Seeder
     {
       DB::table('services')->insert([
 
-       ['name' => 'Bez przydzialu'],
+       ['name' => 'Brak'],
        ['name' => 'Szczecin'],
        ['name' => 'SKM WWa'],
 
