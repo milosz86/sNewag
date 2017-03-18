@@ -6,7 +6,7 @@
 
   <h1>Wszystkie serwisy</h1>
 
-
+<br>
 
   <table class="table table-striped table-bordered">
       <thead>

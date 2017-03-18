@@ -22,6 +22,6 @@ $lid = $logged->id;
 //Gets all data form users table:
 $users = User::where('id', $lid)->get();
 //Returns View
-return view('profile',compact('users','lid'));
+return view('profile',compact('users'));
 }
 }
