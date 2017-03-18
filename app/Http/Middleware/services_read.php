@@ -21,7 +21,7 @@ class services_read
      */
     public function handle($request, Closure $next)
     {
-      if (Auth::check() && Auth::user()->servicesCheck(1) )
+      if (Auth::check() && Auth::user()->servicesCheck(1,'access_services') )
       {
           return $next($request);
       }

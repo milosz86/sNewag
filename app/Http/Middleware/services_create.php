@@ -22,7 +22,7 @@ class services_create
     public function handle($request, Closure $next)
     {
 
-        if (Auth::check() && Auth::user()->servicesCheck(2) )
+        if (Auth::check() && Auth::user()->servicesCheck(2,'access_services') )
         {
             return $next($request);
         }

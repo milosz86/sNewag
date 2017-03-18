@@ -29,14 +29,14 @@
                   <!-- we will add this later since its a little more complicated than the other two buttons -->
                   {{ Form::open(array('url' => 'services/' . $value->id, 'class' => 'pull-right')) }}
                       {{ Form::hidden('_method', 'DELETE') }}
-                      {{ Form::submit('Usun serwis', array('class' => 'btn btn-warning')) }}
+                      {{ Form::submit('Usuń tą pozycję', array('class' => 'btn btn-warning')) }}
                   {{ Form::close() }}
 
                   <!-- show the service (uses the show method found at GET /services/{id} -->
-                  <a class="btn btn-small btn-success" href="{{ URL::to('services/' . $value->id) }}">Pokaz serwis</a>
+                  <a class="btn btn-small btn-success" href="{{ URL::to('services/' . $value->id) }}">Pokaż szczegóły</a>
 
                   <!-- edit this service (uses the edit method found at GET /services/{id}/edit -->
-                  <a class="btn btn-small btn-info" href="{{ URL::to('services/' . $value->id . '/edit') }}">Edytuj serwis</a>
+                  <a class="btn btn-small btn-info" href="{{ URL::to('services/' . $value->id . '/edit') }}">Edytuj</a>
 
               </td>
           </tr>

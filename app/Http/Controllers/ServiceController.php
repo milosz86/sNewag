@@ -144,7 +144,7 @@ class ServiceController extends Controller
             $service->save();
 
             // redirect
-            Session::flash('message', 'Zaktualizowano dane serwisu!');
+            Session::flash('message', 'Zapisano zmiany!');
             return Redirect::to('services');
         }
     }
@@ -162,7 +162,7 @@ class ServiceController extends Controller
       $service->delete();
 
       // redirect
-      Session::flash('message', 'Usunieto serwis!');
+      Session::flash('message', 'Usunięto pozycję!');
       return Redirect::to('services');
     }
 }

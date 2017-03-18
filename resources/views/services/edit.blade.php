@@ -12,13 +12,13 @@
 {{ Form::model($service, array('route' => array('services.update', $service->id), 'method' => 'PUT')) }}
 
     <div class="form-group">
-        {{ Form::label('name', 'Name') }}
+        {{ Form::label('name', 'Nazwa serwisu') }}
         {{ Form::text('name', null, array('class' => 'form-control')) }}
     </div>
 
 
 
-    {{ Form::submit('Edytuj serwis!', array('class' => 'btn btn-primary')) }}
+    {{ Form::submit('Edytuj!', array('class' => 'btn btn-primary')) }}
 
 {{ Form::close() }}
 

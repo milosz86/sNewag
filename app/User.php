@@ -35,10 +35,12 @@ class User extends Authenticatable
       return false;
     }
 }
-
-public function servicesCheck($a)
+//Sprawdza czy uprawnienia zalogowanego użytkownika dla danego działu(kolumny)
+//są wystarczjące. Sprawdza jakie uprawnienia (od 0 do 4) mają wpisane
+//użytkownicy w kolumnie tabeli odpowiadającej za prawa dostępu
+public function servicesCheck($grant,$column)
 {
-if($a <= $this->access_services){
+if($grant <= $this->$column){
   return true;
 } else {
   return false;

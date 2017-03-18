@@ -58,5 +58,9 @@ class Kernel extends HttpKernel
         'services_create' => \App\Http\Middleware\services_create::class,
         'services_edit' => \App\Http\Middleware\services_edit::class,
         'services_delete' => \App\Http\Middleware\services_delete::class,
+        'parts_read' => \App\Http\Middleware\parts_read::class,
+        'parts_create' => \App\Http\Middleware\parts_create::class,
+        'parts_edit' => \App\Http\Middleware\parts_edit::class,
+        'parts_delete' => \App\Http\Middleware\parts_delete::class,
     ];
 }

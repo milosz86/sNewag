@@ -10,7 +10,7 @@ use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Redirect;
 use Session;
 
-class services_delete
+class parts_delete
 {
     /**
      * Handle an incoming request.
@@ -22,7 +22,7 @@ class services_delete
     public function handle($request, Closure $next)
     {
 
-            if (Auth::check() && Auth::user()->servicesCheck(4,'access_services') )
+            if (Auth::check() && Auth::user()->servicesCheck(4,'access_parts') )
             {
                 return $next($request);
             }

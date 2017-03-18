@@ -12,12 +12,12 @@
 {{ Form::open(array('url' => 'services')) }}
 
     <div class="form-group">
-        {{ Form::label('name', 'Name') }}
+        {{ Form::label('name', 'Nazwa serwisu') }}
         {{ Form::text('name', Input::old('name'), array('class' => 'form-control')) }}
     </div>
 
 
-    {{ Form::submit('Stworz serwis!', array('class' => 'btn btn-primary')) }}
+    {{ Form::submit('Dodaj nowy!', array('class' => 'btn btn-primary')) }}
 
 {{ Form::close() }}
 

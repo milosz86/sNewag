@@ -14,6 +14,19 @@ use Illuminate\Support\Facades\View;
 use Illuminate\Support\Facades\Auth;
 class PartController extends Controller
 {
+
+
+  public function __construct()
+      {
+          $this->middleware('auth');
+          $this->middleware('parts_read')->only(['index' , 'show' ]);
+          $this->middleware('parts_create')->only(['create' , 'store' ]);
+          $this->middleware('parts_edit')->only(['edit' , 'update' ]);
+          $this->middleware('parts_delete')->only('destroy');
+
+
+
+      }
     /**
      * Display a listing of the resource.
      *
@@ -71,7 +84,7 @@ class PartController extends Controller
             $part->save();
 
             // redirect
-            Session::flash('message', 'Successfully created Part!');
+            Session::flash('message', 'Dodano pozycję do bazy danych!');
             return Redirect::to('parts');
         }
     }
@@ -121,7 +134,7 @@ class PartController extends Controller
       $rules = array(
         'name'       => 'required',
         'number' => 'required',
-        
+
       );
       $validator = Validator::make(Input::all(), $rules);
 
@@ -139,7 +152,7 @@ class PartController extends Controller
           $part->save();
 
           // redirect
-          Session::flash('message', 'Successfully updated part!');
+          Session::flash('message', 'Zapisano zmiany!');
           return Redirect::to('parts');
       }
     }
@@ -157,7 +170,7 @@ class PartController extends Controller
       $part->delete();
 
       // redirect
-      Session::flash('message', 'Successfully deleted the part!');
+      Session::flash('message', 'Usunięto pozycję!');
       return Redirect::to('parts');
     }
 }

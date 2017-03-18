@@ -23,7 +23,7 @@ class services_edit
     {
 
 
-          if (Auth::check() && Auth::user()->servicesCheck(3) )
+          if (Auth::check() && Auth::user()->servicesCheck(3,'access_services') )
           {
               return $next($request);
           }
