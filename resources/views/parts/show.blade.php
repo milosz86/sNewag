@@ -5,10 +5,12 @@
 
 
 
-<h1>Showing {{ $part->name }}</h1>
+
+
 
 <div class="jumbotron text-center">
-    <h2>{{ $part->name }}</h2>
+
+    <h3>{{ $part->name }}</h3>
     <p>
         <strong>Mianownica:</strong> {{ $part->number }}<br>
         <strong>Producent:</strong> {{ $part->createdby }}

@@ -32,7 +32,7 @@ class ServiceController extends Controller
     public function index()
     {
       // get all the services
-      $services = Service::all();
+      $services = Service::where('id', '!=', '1')->get();
       // load the view and pass the services
       return View::make('services.index')->with('services', $services);
       }

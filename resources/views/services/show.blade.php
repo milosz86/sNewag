@@ -4,7 +4,7 @@
   <div class="container">
 
 
-<h1>Aktualnie {{ $service->name }}</h1>
+
 
     <div class="jumbotron text-center">
         <h2>{{ $service->name }}</h2>

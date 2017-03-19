@@ -4,41 +4,43 @@
   <div class="container">
 
 
-  <h1>Wszystkie serwisy</h1>
+  <h1>Dane serwisów:</h1>
 
 <br>
 
-  <table class="table table-striped table-bordered">
+  <table class="table table-responsive">
       <thead>
           <tr>
-              <td>ID</td>
-              <td>Nazwa</td>
-              <td>Akcja</td>
+              <td class="text-center"><h3></h3></td>
+              <td class="text-center"><h3>Nazwa</h3></td>
+              <td class="text-center"><h3>Opcje</h3></td>
+
           </tr>
       </thead>
       <tbody>
         @foreach($services as $key => $value)
           <tr>
-              <td>{{ $value->id }}</td>
-              <td>{{ $value->name }}</td>
-
-              <!-- we will also add show, edit, and delete buttons -->
-              <td>
-
-                  <!-- delete the service (uses the destroy method DESTROY /services/{id} -->
-                  <!-- we will add this later since its a little more complicated than the other two buttons -->
-                  {{ Form::open(array('url' => 'services/' . $value->id, 'class' => 'pull-right')) }}
-                      {{ Form::hidden('_method', 'DELETE') }}
-                      {{ Form::submit('Usuń tą pozycję', array('class' => 'btn btn-warning')) }}
-                  {{ Form::close() }}
-
-                  <!-- show the service (uses the show method found at GET /services/{id} -->
-                  <a class="btn btn-small btn-success" href="{{ URL::to('services/' . $value->id) }}">Pokaż szczegóły</a>
-
-                  <!-- edit this service (uses the edit method found at GET /services/{id}/edit -->
-                  <a class="btn btn-small btn-info" href="{{ URL::to('services/' . $value->id . '/edit') }}">Edytuj</a>
+              <td class="text-center">
+                {{ Form::open(array('url' => 'services/' . $value->id)) }}
+                    {{ Form::hidden('_method', 'DELETE') }}
+                    {{ Form::submit('Usuń tą pozycję', array('class' => 'btn btn-xs btn-danger')) }}
+                {{ Form::close() }}
 
               </td>
+              <td class="text-center">{{ $value->name }}</td>
+
+              <!-- we will also add show, edit, and delete buttons -->
+              <td class="text-center">
+                <div class="btn-group">
+                  <a class="btn btn-sm btn-success" href="{{ URL::to('services/' . $value->id) }}">Pokaż szczegóły</a>
+
+                  <!-- edit this service (uses the edit method found at GET /services/{id}/edit -->
+                  <a class="btn btn-sm btn-info" href="{{ URL::to('services/' . $value->id . '/edit') }}">Edytuj</a>
+
+                </div>
+
+              </td>
+
           </tr>
       @endforeach
       </tbody>
