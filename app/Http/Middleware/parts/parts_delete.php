@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Middleware;
+namespace App\Http\Middleware\parts;
 
 use Closure;
 use Illuminate\Support\Facades\Auth;
@@ -10,7 +10,7 @@ use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Redirect;
 use Session;
 
-class services_read
+class parts_delete
 {
     /**
      * Handle an incoming request.
@@ -21,15 +21,16 @@ class services_read
      */
     public function handle($request, Closure $next)
     {
-      if (Auth::check() && Auth::user()->servicesCheck(1,'access_services') )
-      {
-          return $next($request);
-      }
-      else{
 
-        Session::flash('message', 'Niestety twoje konto nie posiada dostępu');
-        return Redirect::to('/');
+            if (Auth::check() && Auth::user()->servicesCheck(4,'access_parts') )
+            {
+                return $next($request);
+            }
+            else{
 
-      }
+              Session::flash('message', 'Niestety twoje konto nie posiada dostępu');
+              return Redirect::to('/');
+
+            }
     }
 }

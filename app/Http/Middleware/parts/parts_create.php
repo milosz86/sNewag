@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Middleware;
+namespace App\Http\Middleware\parts;
 
 use Closure;
 use Illuminate\Support\Facades\Auth;
@@ -10,7 +10,7 @@ use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Redirect;
 use Session;
 
-class services_create
+class parts_create
 {
     /**
      * Handle an incoming request.
@@ -22,7 +22,7 @@ class services_create
     public function handle($request, Closure $next)
     {
 
-        if (Auth::check() && Auth::user()->servicesCheck(2,'access_services') )
+        if (Auth::check() && Auth::user()->servicesCheck(2,'access_parts') )
         {
             return $next($request);
         }
