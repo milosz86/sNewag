@@ -48,7 +48,8 @@ class VehicleController extends Controller
      */
     public function create()
     {
-         return View::make('vehicles.create');
+      $services = Service::pluck('name', 'id');
+         return View::make('vehicles.create')->with('services', $services);
     }
 
     /**
@@ -79,6 +80,7 @@ class VehicleController extends Controller
             // store
             $vehicle = new Vehicle;
             $vehicle->name       = Input::get('name');
+            $vehicle->service_id = Input::get('service_id');
             $vehicle->type      = Input::get('type');
             $vehicle->production_date = Input::get('production_date');
             $vehicle->warranty      = Input::get('warranty');
@@ -116,10 +118,10 @@ class VehicleController extends Controller
     {
       // get the vehicle
       $vehicle = Vehicle::find($id);
+      $services = Service::pluck('name', 'id');
 
       // show the edit form and pass the vehicle
-      return View::make('vehicles.edit')
-          ->with('vehicle', $vehicle);
+      return View::make('vehicles.edit', compact('vehicle', 'services'));
     }
 
     /**
@@ -150,6 +152,7 @@ class VehicleController extends Controller
           // store
           $vehicle = Vehicle::find($id);
           $vehicle->name       = Input::get('name');
+          $vehicle->service_id = Input::get('service_id');
           $vehicle->type      = Input::get('type');
           $vehicle->production_date = Input::get('production_date');
           $vehicle->warranty      = Input::get('warranty');
