@@ -26,6 +26,7 @@ class CreateUsersTable extends Migration
             $table->string('access')->default('spectator');
             $table->integer('access_services')->default('0');
             $table->integer('access_parts')->default('0');
+            $table->integer('access_vehicles')->default('0');
             $table->rememberToken();
             $table->timestamps();
         });
