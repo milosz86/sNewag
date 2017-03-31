@@ -14,7 +14,7 @@
             <td class="text-center"><h3></h3></td>
             <td class="text-center"><h3>Nazwa części</h3></td>
             <td class="text-center"><h3>Mianownica</h3></td>
-            <td class="text-center"><h3>Opcje</h3></td>
+            <td class="text-center"><h3></h3></td>
         </tr>
     </thead>
     <tbody>
@@ -29,7 +29,7 @@
 
             </td>
             <td class="text-center">{{ $value->name }}</td>
-            <td class="text-center">{{ $value->number }}</td>            
+            <td class="text-center">{{ $value->number }}</td>
 
             <!-- we will also add show, edit, and delete buttons -->
             <td class="text-center">

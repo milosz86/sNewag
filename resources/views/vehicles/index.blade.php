@@ -15,7 +15,7 @@
             <td class="text-center"><h3>Nazwa pojazdu</h3></td>
             <td class="text-center"><h3>Typ</h3></td>
             <td class="text-center"><h3>Na gwarancji</h3></td>
-            <td class="text-center"><h3>Opcje</h3></td>
+            <td class="text-center"><h3></h3></td>
         </tr>
     </thead>
     <tbody>

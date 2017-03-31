@@ -32,7 +32,7 @@
 
     <div class="form-group">
         {{ Form::label('production_date', 'Data produkcji') }}
-        {{ Form::date('production_date', \Carbon\Carbon::now(), Input::old('production_date'), array('class' => 'form-control')) }}
+        {{ Form::date('production_date', \Carbon\Carbon::now() , array('class' => 'form-control')) }}
 
     </div>
 

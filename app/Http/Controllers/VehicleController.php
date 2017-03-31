@@ -64,6 +64,7 @@ class VehicleController extends Controller
         $rules = array(
             'name'       => 'required',
             'type' => 'required',
+            'service_id' => 'required',
             'production_date' => 'required',
             'warranty' => 'required',
 
@@ -136,6 +137,7 @@ class VehicleController extends Controller
       // validate
       $rules = array(
         'name'       => 'required',
+        'service_id' => 'required',
         'type' => 'required',
         'production_date' => 'required',
         'warranty' => 'required',

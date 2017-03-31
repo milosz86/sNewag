@@ -13,7 +13,7 @@
           <tr>
               <td class="text-center"><h3></h3></td>
               <td class="text-center"><h3>Nazwa</h3></td>
-              <td class="text-center"><h3>Opcje</h3></td>
+              <td class="text-center"><h3></h3></td>
 
           </tr>
       </thead>
