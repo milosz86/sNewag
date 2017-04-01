@@ -10,11 +10,15 @@
 
 <div class="jumbotron text-center">
 
-    <h3>{{ $vehicle->name }}</h3>
+    <h3>{{ $shipment->part->name }}</h3>
     <p>
-        <strong>Typ:</strong> {{ $vehicle->type }}<br>
-        <strong>Data produkcji:</strong> {{ $vehicle->production_date }}<br>
-          <strong>Obsługujący serwis:</strong> {{ $vehicle->service->name }}
+        <strong>Mianownica:</strong> {{ $shipment->part->number }}<br>
+        <strong>Producent:</strong> {{ $shipment->part->createdby }}<br>
+        <strong>Wprowadzone przez:</strong> {{ $shipment->user->name }}&nbsp{{$shipment->user->surname}}&nbsp <strong>dnia</strong>&nbsp{{$shipment->date}}<br>
+        <strong>Edytowane:</strong> {{ $shipment->updated_at }}<br>
+        <strong>Numery seryjne:</strong> {{ $shipment->serial }}<br>
+        <strong>Dodatkowe informacje:</strong><br> {{ $shipment->info }}
+
     </p>
 </div>
 

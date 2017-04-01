@@ -4,36 +4,44 @@
   <div class="container">
 
 
-    <h1>Edytujesz następującą pozycję:&nbsp {{ $vehicle->name }}</h1>
+    <h1>{{ $shipment->part->name }}</h1>
 
     <!-- if there are creation errors, they will show here -->
     {{ HTML::ul($errors->all()) }}
 
-    {{ Form::model($vehicle, array('route' => array('vehicles.update', $vehicle->id), 'method' => 'PUT')) }}
+    {{ Form::model($shipment, array('route' => array('shipments.update', $shipment->id), 'method' => 'PUT')) }}
+
 
         <div class="form-group">
-            {{ Form::label('name', 'Nazwa pojazdu') }}
-            {{ Form::text('name', null, array('class' => 'form-control')) }}
-        </div>
-        <div class="form-group">
-            {{ Form::label('service_id', 'Serwis obsługujący') }}
-            {{ Form::select('service_id', $services, Input::old('service_id') , array('class' => 'form-control'))}}
+            {{ Form::label('part_id', 'Nazwa części') }}
+            {{ Form::select('part_id', $parts, null , array('class' => 'form-control'))}}
         </div>
 
         <div class="form-group">
-            {{ Form::label('type', 'Typ') }}
-            {{ Form::text('type', null, array('class' => 'form-control')) }}
+            {{ Form::label('quantity', 'Ilość') }}
+            {{ Form::number('quantity', null, array('class' => 'form-control')) }}
         </div>
 
         <div class="form-group">
-          {{ Form::label('warranty', 'Na gwarancji') }}
-          {{ Form::select('warranty', array('1' => 'TAK', '0' => 'NIE'), null, array('class' => 'form-control'))}}
+            {{ Form::label('date', 'Data') }}
+            {{ Form::date('date', \Carbon\Carbon::now() , array('class' => 'form-control')) }}
         </div>
 
         <div class="form-group">
-            {{ Form::label('production_date', 'Data produkcji') }}
-            {{ Form::date('production_date', null, array('class' => 'form-control')) }}
+            {{ Form::label('status', 'Status') }}
+            {{ Form::select('status', array ('' => 'Wybierz status', 'Przysłano' => 'Przysłano', 'Wysłano' => 'Wysłano'), null, array('class' => 'form-control'))}}
         </div>
+
+        <div class="form-group">
+            {{ Form::label('serial', 'Numer seryjny (opcjonalnie)') }}
+            {{ Form::text('serial', null, array('class' => 'form-control')) }}
+        </div>
+
+        <div class="form-group">
+            {{ Form::label('info', 'Dodatkowe informacje (opcjonalnie)') }}
+            {{ Form::textarea('info', null, array('class' => 'form-control')) }}
+        </div>
+
 
         {{ Form::submit('Zapisz zmiany!', array('class' => 'btn btn-primary')) }}
 

@@ -23,7 +23,9 @@ class CreateShipmentsTable extends Migration
           $table->string('status');
           $table->string('serial')->nullable();
           $table->integer('quantity');
-          $table->string('info')->nullable();          
+          $table->string('info')->nullable();
+          $table->integer('edited_by')->unsigned()->index()->nullable();
+          $table->foreign('edited_by')->references('id')->on('users')->onDelete('cascade');
           $table->timestamps();
         });
     }

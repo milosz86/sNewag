@@ -82,6 +82,7 @@ class ShipmentController extends Controller
             $shipment->serial        = Input::get('serial');
             $shipment->quantity      = Input::get('quantity');
             $shipment->info          = Input::get('info');
+            $shipment->edited_by     = Auth::id();
             $shipment->save();
 
             // redirect
@@ -98,7 +99,13 @@ class ShipmentController extends Controller
      */
     public function show($id)
     {
-        //
+      $parts = Part::all();
+      $users = User::all();
+
+      $shipment = Shipment::find($id);
+
+      // show the view and pass the vehicle to it
+      return View::make('shipments.show', compact('shipment', 'parts', 'users'));
     }
 
     /**
@@ -109,7 +116,11 @@ class ShipmentController extends Controller
      */
     public function edit($id)
     {
-        //
+
+      $parts = Part::pluck('name', 'id')->toArray();
+      $shipment = Shipment::find($id);
+
+      return View::make('shipments.edit', compact('parts', 'shipment'));
     }
 
     /**
@@ -121,7 +132,37 @@ class ShipmentController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+      // validate
+      $rules = array(
+        'part_id'       => 'required|numeric',
+        'date' => 'required',
+        'status' => 'required',
+        'quantity' => 'required|numeric',
+
+      );
+      $validator = Validator::make(Input::all(), $rules);
+
+      // process the login
+      if ($validator->fails()) {
+          return Redirect::to('shipments/' . $id . '/edit')
+              ->withErrors($validator)
+              ->withInput(Input::all());
+      } else {
+          // store
+          $shipment = Shipment::find($id);
+          $shipment->part_id       = Input::get('part_id');
+          $shipment->date          = Input::get('date');
+          $shipment->status        = Input::get('status');
+          $shipment->serial        = Input::get('serial');
+          $shipment->quantity      = Input::get('quantity');
+          $shipment->info          = Input::get('info');
+          $shipment->edited_by     = Auth::id();
+          $shipment->save();
+
+          // redirect
+          Session::flash('message', 'Zapisano zmiany!');
+          return Redirect::to('shipments');
+      }
     }
 
     /**
@@ -132,6 +173,12 @@ class ShipmentController extends Controller
      */
     public function destroy($id)
     {
-        //
+      // delete
+      $shipment = Shipment::find($id);
+      $shipment->delete();
+
+      // redirect
+      Session::flash('message', 'Usunięto pozycję!');
+      return Redirect::to('shipments');
     }
 }

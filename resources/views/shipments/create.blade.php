@@ -18,6 +18,11 @@
     </div>
 
     <div class="form-group">
+        {{ Form::label('quantity', 'Ilość') }}
+        {{ Form::number('quantity', Input::old('quantity'), array('class' => 'form-control')) }}
+    </div>
+
+    <div class="form-group">
         {{ Form::label('date', 'Data') }}
         {{ Form::date('date', \Carbon\Carbon::now() , array('class' => 'form-control')) }}
     </div>
@@ -28,18 +33,13 @@
     </div>
 
     <div class="form-group">
-        {{ Form::label('info', 'Dodatkowe informacje') }}
-        {{ Form::text('info', Input::old('info'), array('class' => 'form-control')) }}
-    </div>
-
-    <div class="form-group">
-        {{ Form::label('serial', 'Numer seryjny') }}
+        {{ Form::label('serial', 'Numer seryjny (opcjonalnie)') }}
         {{ Form::text('serial', Input::old('serial'), array('class' => 'form-control')) }}
     </div>
 
     <div class="form-group">
-        {{ Form::label('quantity', 'Ilość') }}
-        {{ Form::number('quantity', Input::old('quantity'), array('class' => 'form-control')) }}
+        {{ Form::label('info', 'Dodatkowe informacje (opcjonalnie)') }}
+        {{ Form::textarea('info', Input::old('info'), array('class' => 'form-control')) }}
     </div>
 
 
