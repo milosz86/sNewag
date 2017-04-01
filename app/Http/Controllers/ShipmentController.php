@@ -18,6 +18,16 @@ use Illuminate\Foundation\Auth\AuthenticatesUsers;
 
 class ShipmentController extends Controller
 {
+
+
+  public function __construct()
+      {
+          $this->middleware('auth');
+          $this->middleware('shipments_read')->only(['index' , 'show' ]);
+          $this->middleware('shipments_create')->only(['create' , 'store' ]);
+          $this->middleware('shipments_edit')->only(['edit' , 'update' ]);
+          $this->middleware('shipments_delete')->only('destroy');
+      }
     /**
      * Display a listing of the resource.
      *

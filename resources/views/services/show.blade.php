@@ -11,6 +11,10 @@
         <p>
             <strong>jakieś szczegolowe dane serwisu</strong><br>
 
+            <br>
+            <br>
+                    <a class="btn btn-xm btn-info" href="{{ URL::to('services/') }}">Powrót</a>
+
         </p>
     </div>
 

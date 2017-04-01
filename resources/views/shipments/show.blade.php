@@ -18,6 +18,9 @@
         <strong>Edytowane:</strong> {{ $shipment->updated_at }}<br>
         <strong>Numery seryjne:</strong> {{ $shipment->serial }}<br>
         <strong>Dodatkowe informacje:</strong><br> {{ $shipment->info }}
+<br>
+<br>
+        <a class="btn btn-xm btn-info" href="{{ URL::to('shipments/') }}">Powrót</a>
 
     </p>
 </div>

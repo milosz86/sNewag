@@ -14,6 +14,10 @@
     <p>
         <strong>Mianownica:</strong> {{ $part->number }}<br>
         <strong>Producent:</strong> {{ $part->createdby }}
+
+        <br>
+        <br>
+                <a class="btn btn-xm btn-info" href="{{ URL::to('parts/') }}">Powrót</a>
     </p>
 </div>
 
