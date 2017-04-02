@@ -12,6 +12,8 @@ class Shipment extends Model
   public function user() {
   return $this->belongsTo(User::class);
   }
-
+  public function getEditorsName() {
+    return User::where('id', $this->edited_by)->first();
+  }
 
 }
