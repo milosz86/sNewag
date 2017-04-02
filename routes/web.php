@@ -20,5 +20,6 @@ Route::any('profile' , 'ProfileController@show');
 Route::resource('parts', 'PartController');
 Route::resource('vehicles', 'VehicleController');
 Route::resource('shipments', 'ShipmentController');
+Route::resource('cars', 'CarController');
 Route::get('/', function() {return View('welcome'); });
 Auth::routes();

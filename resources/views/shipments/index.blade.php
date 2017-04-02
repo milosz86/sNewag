@@ -30,7 +30,7 @@
               {{ Form::close() }}
 
             </td>
-            <td class="text-center">{{ $value->part->name }}</td>          
+            <td class="text-center">{{ $value->part->name }}</td>
             <td class="text-center">{{ $value->status }}</td>
             <td class="text-center">{{ $value->quantity }}</td>
             <td class="text-center">{{ $value->date }}</td>
