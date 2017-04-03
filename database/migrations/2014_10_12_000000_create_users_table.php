@@ -28,6 +28,7 @@ class CreateUsersTable extends Migration
             $table->integer('access_parts')->default('0');
             $table->integer('access_vehicles')->default('0');
             $table->integer('access_shipments')->default('0');
+            $table->integer('access_cars')->default('0');
             $table->rememberToken();
             $table->timestamps();
         });

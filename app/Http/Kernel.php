@@ -70,5 +70,9 @@ class Kernel extends HttpKernel
         'shipments_create' => \App\Http\Middleware\shipments\shipments_create::class,
         'shipments_edit' => \App\Http\Middleware\shipments\shipments_edit::class,
         'shipments_delete' => \App\Http\Middleware\shipments\shipments_delete::class,
+        'cars_read' => \App\Http\Middleware\cars\cars_read::class,
+        'cars_create' => \App\Http\Middleware\cars\cars_create::class,
+        'cars_edit' => \App\Http\Middleware\cars\cars_edit::class,
+        'cars_delete' => \App\Http\Middleware\cars\cars_delete::class,
     ];
 }

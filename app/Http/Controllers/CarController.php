@@ -18,6 +18,16 @@ use Illuminate\Support\Facades\Auth;
 
 class CarController extends Controller
 {
+
+  public function __construct()
+      {
+          $this->middleware('auth');
+          $this->middleware('cars_read')->only(['index' , 'show' ]);
+          $this->middleware('cars_create')->only(['create' , 'store' ]);
+          $this->middleware('cars_edit')->only(['edit' , 'update' ]);
+          $this->middleware('cars_delete')->only('destroy');
+      }
+
     /**
      * Display a listing of the resource.
      *
