@@ -113,7 +113,7 @@ class ShipmentController extends Controller
       $parts = Part::all();
       $users = User::all();
 
-      $shipment = Shipment::find($id);
+      $shipment = Shipment::where('service_id', Auth::user()->service_id)->find($id);
 
       // show the view and pass the vehicle to it
       return View::make('shipments.show', compact('shipment', 'parts', 'users'));
@@ -129,7 +129,7 @@ class ShipmentController extends Controller
     {
 
       $parts = Part::pluck('name', 'id')->toArray();
-      $shipment = Shipment::find($id);
+      $shipment = Shipment::where('service_id', Auth::user()->service_id)->find($id);
 
       return View::make('shipments.edit', compact('parts', 'shipment'));
     }
@@ -160,7 +160,7 @@ class ShipmentController extends Controller
               ->withInput(Input::all());
       } else {
           // store
-          $shipment = Shipment::find($id);
+          $shipment = Shipment::where('service_id', Auth::user()->service_id)->find($id);
           $shipment->part_id       = Input::get('part_id');
           $shipment->date          = Input::get('date');
           $shipment->status        = Input::get('status');
@@ -185,7 +185,7 @@ class ShipmentController extends Controller
     public function destroy($id)
     {
       // delete
-      $shipment = Shipment::find($id);
+      $shipment = Shipment::where('service_id', Auth::user()->service_id)->find($id);
       $shipment->delete();
 
       // redirect
