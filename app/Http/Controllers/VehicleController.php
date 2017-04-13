@@ -34,7 +34,7 @@ class VehicleController extends Controller
     public function index()
     {
       // get all the vehicles
-      $vehicles = Vehicle::all();
+      $vehicles = Vehicle::where('service_id', Auth::user()->service_id)->get();
 
       // load the view and pass the vehicles
       return View::make('vehicles.index')
@@ -64,7 +64,6 @@ class VehicleController extends Controller
         $rules = array(
             'name'       => 'required',
             'type' => 'required',
-            'service_id' => 'required',
             'production_date' => 'required',
             'warranty' => 'required',
 
@@ -81,7 +80,7 @@ class VehicleController extends Controller
             // store
             $vehicle = new Vehicle;
             $vehicle->name       = Input::get('name');
-            $vehicle->service_id = Input::get('service_id');
+            $vehicle->service_id = Auth::user()->service_id;
             $vehicle->type      = Input::get('type');
             $vehicle->production_date = Input::get('production_date');
             $vehicle->warranty      = Input::get('warranty');
@@ -137,7 +136,6 @@ class VehicleController extends Controller
       // validate
       $rules = array(
         'name'       => 'required',
-        'service_id' => 'required',
         'type' => 'required',
         'production_date' => 'required',
         'warranty' => 'required',
@@ -154,7 +152,6 @@ class VehicleController extends Controller
           // store
           $vehicle = Vehicle::find($id);
           $vehicle->name       = Input::get('name');
-          $vehicle->service_id = Input::get('service_id');
           $vehicle->type      = Input::get('type');
           $vehicle->production_date = Input::get('production_date');
           $vehicle->warranty      = Input::get('warranty');

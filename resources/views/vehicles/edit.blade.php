@@ -15,11 +15,7 @@
             {{ Form::label('name', 'Nazwa pojazdu') }}
             {{ Form::text('name', null, array('class' => 'form-control')) }}
         </div>
-        <div class="form-group">
-            {{ Form::label('service_id', 'Serwis obsługujący') }}
-            {{ Form::select('service_id', $services, Input::old('service_id') , array('class' => 'form-control'))}}
-        </div>
-
+        
         <div class="form-group">
             {{ Form::label('type', 'Typ') }}
             {{ Form::text('type', null, array('class' => 'form-control')) }}
