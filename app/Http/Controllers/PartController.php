@@ -78,6 +78,7 @@ class PartController extends Controller
         } else {
             // store
             $part = new Part;
+            $part->user_id       = Auth::id();
             $part->name       = Input::get('name');
             $part->number      = Input::get('number');
             $part->createdby = Input::get('createdby');
@@ -99,10 +100,10 @@ class PartController extends Controller
     {
       // get the part
       $part = Part::find($id);
+      $user = User::all();
 
       // show the view and pass the part to it
-      return View::make('parts.show')
-          ->with('part', $part);
+      return View::make('parts.show', compact('part', 'user'));
     }
 
     /**
