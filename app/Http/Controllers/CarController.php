@@ -35,7 +35,7 @@ class CarController extends Controller
      */
     public function index()
     {
-      $cars = Car::all();
+      $cars = Car::all()->where('service_id', Auth::user()->service_id);
       $services = Service::all();
       $users = User::all();
 
@@ -50,7 +50,7 @@ class CarController extends Controller
     public function create()
     {
       $services = Service::pluck('name', 'id')->toArray();
-      $users = User::pluck('name', 'id')->toArray();
+      $users = User::where('service_id', Auth::user()->service_id)->pluck('name', 'id')->toArray();
 
          return View::make('cars.create', compact('services','users'));
     }
@@ -66,7 +66,6 @@ class CarController extends Controller
       // validate
         $rules = array(
             'name'       => 'required',
-            'service_id' => 'required|numeric',
             'user_id' => 'required|numeric',
             'production_date' => 'required|date',
             'insurance_date' => 'required|date',
@@ -92,7 +91,7 @@ class CarController extends Controller
             // store
             $car = new Car;
             $car->name             = Input::get('name');
-            $car->service_id       = Input::get('service_id');
+            $car->service_id       = Auth::user()->service_id;
             $car->user_id          = Input::get('user_id');
             $car->production_date  = Input::get('production_date');
             $car->insurance_date   = Input::get('insurance_date');
@@ -153,7 +152,6 @@ class CarController extends Controller
       // validate
       $rules = array(
         'name'       => 'required',
-        'service_id' => 'required|numeric',
         'user_id' => 'required|numeric',
         'production_date' => 'required|date',
         'insurance_date' => 'required|date',
@@ -175,7 +173,6 @@ class CarController extends Controller
           // store
           $car = Car::find($id);
           $car->name             = Input::get('name');
-          $car->service_id       = Input::get('service_id');
           $car->user_id          = Input::get('user_id');
           $car->production_date  = Input::get('production_date');
           $car->insurance_date   = Input::get('insurance_date');

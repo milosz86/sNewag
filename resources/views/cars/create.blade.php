@@ -18,10 +18,6 @@
         {{ Form::text('name', Input::old('name'), array('class' => 'form-control')) }}
     </div>
 
-    <div class="form-group">
-        {{ Form::label('service_id', 'Użytkownik') }}
-        {{ Form::select('service_id', array('' => 'Wybierz serwis') + $services, Input::old('service_id'), array('class' => 'form-control'))}}
-    </div>
 
     <div class="form-group">
         {{ Form::label('user_id', 'Osoba odpowiedzialna') }}
