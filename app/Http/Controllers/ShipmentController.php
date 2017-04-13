@@ -36,7 +36,7 @@ class ShipmentController extends Controller
     public function index()
     {
 
-      $shipments = Shipment::orderBy('date', 'desc')->get();
+      $shipments = Shipment::orderBy('date', 'desc')->where('service_id', Auth::user()->service_id)->get();
       $parts = Part::all();
       $users = User::all();
 
@@ -87,6 +87,7 @@ class ShipmentController extends Controller
             $shipment = new Shipment;
             $shipment->part_id       = Input::get('part_id');
             $shipment->user_id       = Auth::id();
+            $shipment->service_id    = Auth::user()->service_id;
             $shipment->date          = Input::get('date');
             $shipment->status        = Input::get('status');
             $shipment->serial        = Input::get('serial');
