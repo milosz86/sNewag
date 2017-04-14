@@ -101,7 +101,7 @@ class VehicleController extends Controller
     public function show($id)
     {
       // get the vehicle
-      $vehicle = Vehicle::find($id);
+      $vehicle = Vehicle::where('service_id', Auth::user()->service_id)->find($id);
 
       // show the view and pass the vehicle to it
       return View::make('vehicles.show')
@@ -117,7 +117,7 @@ class VehicleController extends Controller
     public function edit($id)
     {
       // get the vehicle
-      $vehicle = Vehicle::find($id);
+      $vehicle = Vehicle::where('service_id', Auth::user()->service_id)->find($id);
       $services = Service::pluck('name', 'id');
 
       // show the edit form and pass the vehicle
@@ -150,7 +150,7 @@ class VehicleController extends Controller
               ->withInput(Input::all());
       } else {
           // store
-          $vehicle = Vehicle::find($id);
+          $vehicle = Vehicle::where('service_id', Auth::user()->service_id)->find($id);
           $vehicle->name       = Input::get('name');
           $vehicle->type      = Input::get('type');
           $vehicle->production_date = Input::get('production_date');
@@ -172,7 +172,7 @@ class VehicleController extends Controller
     public function destroy($id)
     {
       // delete
-      $vehicle = Vehicle::find($id);
+      $vehicle = Vehicle::where('service_id', Auth::user()->service_id)->find($id);
       $vehicle->delete();
 
       // redirect

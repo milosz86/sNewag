@@ -119,7 +119,7 @@ class CarController extends Controller
 
 
 
-      $car = Car::find($id);
+      $car = Car::where('service_id', Auth::user()->service_id)->find($id);
 
       // show the view and pass the vehicle to it
       return View::make('cars.show', compact('car'));
@@ -135,7 +135,7 @@ class CarController extends Controller
     {
       $users = User::pluck('name', 'id')->toArray();
       $services = Service::pluck('name', 'id')->toArray();
-      $car = Car::find($id);
+      $car = Car::where('service_id', Auth::user()->service_id)->find($id);
 
       return View::make('cars.edit', compact('users', 'car', 'services'));
     }
@@ -171,7 +171,7 @@ class CarController extends Controller
               ->withInput(Input::all());
       } else {
           // store
-          $car = Car::find($id);
+          $car = Car::where('service_id', Auth::user()->service_id)->find($id);
           $car->name             = Input::get('name');
           $car->user_id          = Input::get('user_id');
           $car->production_date  = Input::get('production_date');
@@ -198,7 +198,7 @@ class CarController extends Controller
     public function destroy($id)
     {
       // delete
-      $car = Car::find($id);
+      $car = Car::where('service_id', Auth::user()->service_id)->find($id);
       $car->delete();
 
       // redirect
