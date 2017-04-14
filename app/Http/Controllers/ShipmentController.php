@@ -36,11 +36,14 @@ class ShipmentController extends Controller
     public function index()
     {
 
+      $summary = Shipment::groupBy('part_id')->where([['service_id', '=', Auth::user()->service_id],])
+  ->selectRaw('sum(quantity) as sum, part_id')->get();
+
       $shipments = Shipment::orderBy('date', 'desc')->where('service_id', Auth::user()->service_id)->get();
       $parts = Part::all();
       $users = User::all();
 
-      return View::make('shipments.index', compact('shipments', 'parts', 'users'));
+      return View::make('shipments.index', compact('shipments', 'parts', 'users', 'summary'));
     }
 
     /**
@@ -91,7 +94,14 @@ class ShipmentController extends Controller
             $shipment->date          = Input::get('date');
             $shipment->status        = Input::get('status');
             $shipment->serial        = Input::get('serial');
-            $shipment->quantity      = Input::get('quantity');
+
+
+if ($shipment->status == 'Przysłano') {
+  $shipment->quantity = Input::get('quantity');
+} else {
+  $shipment->quantity = -Input::get('quantity');
+}
+
             $shipment->info          = Input::get('info');
             $shipment->edited_by     = Auth::id();
             $shipment->save();

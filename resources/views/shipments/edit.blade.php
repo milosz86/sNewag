@@ -29,7 +29,7 @@
 
         <div class="form-group">
             {{ Form::label('status', 'Status') }}
-            {{ Form::select('status', array ('' => 'Wybierz status', 'Przysłano' => 'Przysłano', 'Wysłano' => 'Wysłano'), null, array('class' => 'form-control'))}}
+            {{ Form::select('status', array ('' => 'Wybierz status', 'Przysłano' => 'Przysłano', 'Wysłano' => 'Wysłano', 'Wykorzystano' => 'Wykorzystano'), null, array('class' => 'form-control'))}}
         </div>
 
         <div class="form-group">
