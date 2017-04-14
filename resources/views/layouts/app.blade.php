@@ -55,31 +55,26 @@
                     <li class="dropdown">
                       <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Części<span class="caret"></span></a>
                       <ul class="dropdown-menu">
-                        <li><a href="{{ URL::to('parts') }}">Wszystkie części</a></li>
-                        <li><a href="{{ URL::to('parts/create') }}">Dodaj część</a></li>
+                        <li><a href="{{ URL::to('parts') }}">Części - Baza Danych</a></li>
+                        <li><a href="{{ URL::to('parts/create') }}">Dodaj pozycję - Baza Danych</a></li>
+                        <li><a href="{{ URL::to('shipments') }}">Części Wysłane / Odebrane</a></li>
+                        <li><a href="{{ URL::to('shipments/create') }}">Wprowadź przesyłkę</a></li>
                       </ul>
                     </li>
 
                     <li class="dropdown">
-                      <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Pojazdy<span class="caret"></span></a>
+                      <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Pojazdy Trakcyjne<span class="caret"></span></a>
                       <ul class="dropdown-menu">
                         <li><a href="{{ URL::to('vehicles') }}">Wszystkie Pojazdy</a></li>
                         <li><a href="{{ URL::to('vehicles/create') }}">Dodaj pojazd</a></li>
                       </ul>
                     </li>
 
-                    <li class="dropdown">
-                      <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Migracja części<span class="caret"></span></a>
-                      <ul class="dropdown-menu">
-                        <li><a href="{{ URL::to('shipments') }}">Wysłane / Odebrane</a></li>
-                        <li><a href="{{ URL::to('shipments/create') }}">Wprowadź przesyłkę</a></li>
-                      </ul>
-                    </li>
 
                     <li class="dropdown">
-                      <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Flota<span class="caret"></span></a>
+                      <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Auta<span class="caret"></span></a>
                       <ul class="dropdown-menu">
-                        <li><a href="{{ URL::to('cars') }}">Lista samochodów</a></li>
+                        <li><a href="{{ URL::to('cars') }}">Lista pojazdów</a></li>
                         <li><a href="{{ URL::to('cars/create') }}">Dodaj pojazd</a></li>
                       </ul>
                     </li>
