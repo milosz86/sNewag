@@ -22,4 +22,5 @@ Route::resource('vehicles', 'VehicleController');
 Route::resource('shipments', 'ShipmentController');
 Route::resource('cars', 'CarController');
 Route::get('/', function() {return View('welcome'); });
+Route::get('stock', 'StockController@index');
 Auth::routes();
