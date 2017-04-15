@@ -13,7 +13,6 @@
         <tr>
             <td class="text-center"><h4>Nazwa</h4></td>
             <td class="text-center"><h4>Status</h4></td>
-            <td class="text-center"><h4>Data</h4></td>
             <td class="text-center"><h4></h4></td>
         </tr>
     </thead>
@@ -30,21 +29,15 @@
               {{ Form::submit('Usuń wpis', array('class' => 'btn btn-xs btn-danger')) }}
               {{ Form::close() }}
 
-
-
             </td>
-
-            <td class="text-center">{{ $value->date }}</td>
-
-
-
             <td class="text-center">
 
 
                   <div class="btn-group-vertical">
                   <a class="btn btn-xs btn-success" href="{{ URL::to('shipments/' . $value->id) }}">Szczegóły</a>
                   <a class="btn btn-xs btn-info" href="{{ URL::to('shipments/' . $value->id . '/edit') }}">Edytuj</a>
-                </div>
+                </div><br>
+                {{ $value->date }}
 
 
             </td>
