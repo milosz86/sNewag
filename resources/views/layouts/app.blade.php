@@ -56,9 +56,9 @@
                       <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Części<span class="caret"></span></a>
                       <ul class="dropdown-menu">
                         <li><a href="{{ URL::to('parts') }}">Części w Bazie Danych</a></li>
-                        <li><a href="{{ URL::to('parts/create') }}">Zdefiniuj nową część</a></li>
-                        <li><a href="{{ URL::to('shipments') }}">Wysłane/Odebrane/Wykorzystane</a></li>
-                        <li><a href="{{ URL::to('shipments/create') }}">Zmiana Stanu Magazynowego</a></li>
+                        <li><a href="{{ URL::to('parts/create') }}">-> Dodaj część do Bazy</a></li>
+                        <li><a href="{{ URL::to('shipments') }}">Wszystkie Przesłane/Wykorzystane</a></li>
+                        <li><a href="{{ URL::to('shipments/create') }}">-> Zmień Stan Magazynowy</a></li>
                         <li><a href="{{ URL::to('stock') }}">Stan Magazynowy</a></li>
                       </ul>
                     </li>

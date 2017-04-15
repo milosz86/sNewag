@@ -31,11 +31,11 @@
 
               <!-- we will also add show, edit, and delete buttons -->
               <td class="text-center">
-                <div class="btn-group">
-                  <a class="btn btn-sm btn-success" href="{{ URL::to('services/' . $value->id) }}">Pokaż szczegóły</a>
+                <div class="btn-group-vertical">
+                  <a class="btn btn-xs btn-success" href="{{ URL::to('services/' . $value->id) }}">Pokaż szczegóły</a>
 
                   <!-- edit this service (uses the edit method found at GET /services/{id}/edit -->
-                  <a class="btn btn-sm btn-info" href="{{ URL::to('services/' . $value->id . '/edit') }}">Edytuj</a>
+                  <a class="btn btn-xs btn-info" href="{{ URL::to('services/' . $value->id . '/edit') }}">Edytuj</a>
 
                 </div>
 

@@ -4,7 +4,7 @@
   <div class="container">
 
 
-  <h1>Stan Magazynowy</h1>
+  <h3>Stan Magazynowy</h3>
 
 <br>
 
@@ -12,9 +12,9 @@
   <thead>
       <tr>
 
-          <td class="text-center"><h3>Nazwa</h3></td>
-          <td class="text-center"><h3>Mianownica</h3></td>
-          <td class="text-center"><h3>Ilość</h3></td>
+          <td class="text-center"><h4>Nazwa</h4></td>
+          <td class="text-center"><h4>Mianownica</h4></td>
+          <td class="text-center"><h4>Ilość</h4></td>
 
       </tr>
   </thead>

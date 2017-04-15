@@ -4,47 +4,48 @@
   <div class="container">
 
 
-  <h1>Wysyłka/odbiór części:</h1>
+  <h3>Części przesłane/wykorzystane:</h3>
 
 <br>
 
   <table class="table table-responsive">
     <thead>
         <tr>
-            <td class="text-center"><h3></h3></td>
-            <td class="text-center"><h3>Nazwa</h3></td>
-            <td class="text-center"><h3>Status</h3></td>
-            <td class="text-center"><h3>Ilość</h3></td>
-            <td class="text-center"><h3>Data</h3></td>
-            <td class="text-center"><h3></h3></td>
+            <td class="text-center"><h4>Nazwa</h4></td>
+            <td class="text-center"><h4>Status</h4></td>
+            <td class="text-center"><h4>Data</h4></td>
+            <td class="text-center"><h4></h4></td>
         </tr>
     </thead>
     <tbody>
     @foreach($shipments as $key => $value)
         <tr>
 
-            <td class="text-center">
+
+            <td class="text-center">{{ $value->part->name }}</td>
+            <td class="text-center">{{ $value->status }}<br>{{ abs($value->quantity) }}&nbspszt.
+
               {{ Form::open(array('url' => 'shipments/' . $value->id)) }}
-                  {{ Form::hidden('_method', 'DELETE') }}
-                  {{ Form::submit('Usuń tą pozycję', array('class' => 'btn btn-xs btn-danger')) }}
+              {{ Form::hidden('_method', 'DELETE') }}
+              {{ Form::submit('Usuń wpis', array('class' => 'btn btn-xs btn-danger')) }}
               {{ Form::close() }}
 
+
+
             </td>
-            <td class="text-center">{{ $value->part->name }}</td>
-            <td class="text-center">{{ $value->status }}</td>
-            <td class="text-center">{{ abs($value->quantity) }}</td>
+
             <td class="text-center">{{ $value->date }}</td>
 
 
 
             <td class="text-center">
-                <div class="btn-group">
-
-                <a class="btn btn-sm btn-success" href="{{ URL::to('shipments/' . $value->id) }}">Pokaż szczegóły</a>
 
 
-                <a class="btn btn-sm btn-info" href="{{ URL::to('shipments/' . $value->id . '/edit') }}">Edytuj</a>
-              </div><br>
+                  <div class="btn-group-vertical">
+                  <a class="btn btn-xs btn-success" href="{{ URL::to('shipments/' . $value->id) }}">Szczegóły</a>
+                  <a class="btn btn-xs btn-info" href="{{ URL::to('shipments/' . $value->id . '/edit') }}">Edytuj</a>
+                </div>
+
 
             </td>
         </tr>

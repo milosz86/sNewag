@@ -12,10 +12,10 @@
 
     <h3>{{ $part->name }}</h3>
     <p>
-        <strong>Mianownica:</strong> {{ $part->number }}<br>
-        <strong>Producent:</strong> {{ $part->createdby }}<br>
-        <strong>Dodane przez:</strong> {{ $part->user->name }}&nbsp{{$part->user->surname}}&nbsp <strong>dnia</strong>&nbsp{{$part->created_at}}<br>
-        <strong>Ostatnio edytowane:</strong> {{ $part->updated_at }}<br>
+        <strong>Mianownica:</strong><br> {{ $part->number }}<br>
+        <strong>Producent:</strong><br> {{ $part->createdby }}<br>
+        <strong>Dodane przez:</strong><br> {{ $part->user->name }}&nbsp{{$part->user->surname}}<br> <strong>dnia</strong>&nbsp{{$part->created_at}}<br>
+        <strong>Ostatnio edytowane:</strong><br> {{ $part->updated_at }}<br>
 
         <br>
         <br>

@@ -36,14 +36,12 @@ class ShipmentController extends Controller
     public function index()
     {
 
-      $summary = Shipment::groupBy('part_id')->where([['service_id', '=', Auth::user()->service_id],])
-  ->selectRaw('sum(quantity) as sum, part_id')->get();
 
       $shipments = Shipment::orderBy('date', 'desc')->where('service_id', Auth::user()->service_id)->get();
       $parts = Part::all();
       $users = User::all();
 
-      return View::make('shipments.index', compact('shipments', 'parts', 'users', 'summary'));
+      return View::make('shipments.index', compact('shipments', 'parts', 'users'));
     }
 
     /**
