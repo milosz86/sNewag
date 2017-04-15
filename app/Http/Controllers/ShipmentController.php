@@ -51,7 +51,7 @@ class ShipmentController extends Controller
      */
     public function create()
     {
-      $parts = Part::pluck('name', 'id')->toArray();
+      $parts = Part::orderBy('name')->pluck('name', 'id')->toArray();
 
          return View::make('shipments.create', compact('parts'));
     }

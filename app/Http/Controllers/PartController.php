@@ -35,7 +35,7 @@ class PartController extends Controller
     public function index()
     {
       // get all the parts
-      $parts = Part::all();
+      $parts = Part::orderBy('name')->get();
 
       // load the view and pass the parts
       return View::make('parts.index')
