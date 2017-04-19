@@ -94,11 +94,11 @@ class ShipmentController extends Controller
             $shipment->serial        = Input::get('serial');
 
 
-if ($shipment->status == 'Przysłano') {
-  $shipment->quantity = Input::get('quantity');
-} else {
-  $shipment->quantity = -Input::get('quantity');
-}
+            if ($shipment->status == 'Przysłano') {
+              $shipment->quantity = abs(Input::get('quantity'));
+            } else {
+              $shipment->quantity = -abs(Input::get('quantity'));
+            }
 
             $shipment->info          = Input::get('info');
             $shipment->edited_by     = Auth::id();
@@ -173,7 +173,13 @@ if ($shipment->status == 'Przysłano') {
           $shipment->date          = Input::get('date');
           $shipment->status        = Input::get('status');
           $shipment->serial        = Input::get('serial');
-          $shipment->quantity      = Input::get('quantity');
+
+          if ($shipment->status == 'Przysłano') {
+            $shipment->quantity = abs(Input::get('quantity'));
+          } else {
+            $shipment->quantity = -abs(Input::get('quantity'));
+          }
+
           $shipment->info          = Input::get('info');
           $shipment->edited_by     = Auth::id();
           $shipment->save();
