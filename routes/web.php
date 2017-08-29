@@ -15,12 +15,12 @@
 
 
 
-Route::resource('/services' , 'ServiceController');
+Route::resource('services' , 'ServiceController');
 Route::any('profile' , 'ProfileController@show');
 Route::resource('parts', 'PartController');
 Route::resource('vehicles', 'VehicleController');
 Route::resource('shipments', 'ShipmentController');
 Route::resource('cars', 'CarController');
-Route::get('/', function() {return View('welcome'); });
+Route::resource('/', 'NewspaperController');
 Route::get('stock', 'StockController@index');
 Auth::routes();
