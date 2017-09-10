@@ -15,6 +15,12 @@ class CreateNewspapersTable extends Migration
     {
         Schema::create('newspapers', function (Blueprint $table) {
             $table->increments('id');
+            $table->integer('user_id')->unsigned()->index();
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+            $table->integer('service_id')->unsigned()->index()->default('1');
+            $table->foreign('service_id')->references('id')->on('services')->onDelete('cascade');
+            $table->string('title');
+            $table->string('body');
             $table->timestamps();
         });
     }

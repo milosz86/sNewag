@@ -13,7 +13,7 @@
       <meta name="description" content="">
       <meta name="author" content="">
 
-      <title>Blog Post - Start Bootstrap Template</title>
+      <title>Aktualności</title>
 
 
       <!-- Custom styles for this template -->
@@ -28,10 +28,33 @@
       <!-- Page Content -->
       <div class="container">
 
+
+
+
+<!-- PANEL!!!!!!!!!!!!!!!!!!!!!!!!!!!!!-->
+
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title">Tytuł</h3>
+  </div>
+  <div class="panel-body">
+    Zawartość
+  </div>
+  <div class="panel-footer">Footer</div>
+</div>
+
+
+
+
+
+
+
+
+<!-- KONIEC PANELU!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!-->
         <div class="row">
 
           <!-- Post Content Column -->
-          <div class="col-lg-8">
+          <div class="col-lg-12">
 
             <!-- Title -->
             <h1 class="mt-4">Post Title</h1>
@@ -39,7 +62,7 @@
             <!-- Author -->
             <p class="lead">
               by
-              <a href="#">Start Bootstrap</a>
+              <a href="#">Użytkownik</a>
             </p>
 
             <hr>
@@ -50,7 +73,7 @@
             <hr>
 
             <!-- Preview Image -->
-            <img class="img-fluid rounded" src="http://placehold.it/900x300" alt="">
+            <img class="img-responsive rounded" src="http://placehold.it/900x300" alt="">
 
             <hr>
 
@@ -75,7 +98,7 @@
             <hr>
 
             <!-- Comments Form -->
-            <div class="card my-4">
+<!--        <div class="card my-4">
               <h5 class="card-header">Leave a Comment:</h5>
               <div class="card-body">
                 <form>
@@ -86,19 +109,28 @@
                 </form>
               </div>
             </div>
-
+-->
             <!-- Single Comment -->
-            <div class="media mb-4">
+<!--              <div class="media mb-4">
               <img class="d-flex mr-3 rounded-circle" src="http://placehold.it/50x50" alt="">
               <div class="media-body">
                 <h5 class="mt-0">Commenter Name</h5>
                 Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
               </div>
             </div>
-
+-->
 
           </div>
 
+
+
+<!-- DRUGI!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!-->
+
+
+
+
+
+<!--   KONIEC DRUGIEGO!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!-->
 
         </div>
         <!-- /.row -->
@@ -109,7 +141,7 @@
       <!-- Footer -->
       <footer class="py-5 bg-dark">
         <div class="container">
-          <p class="m-0 text-center text-white">Copyright &copy; Your Website 2017</p>
+          <p class="m-0 text-center text-white">Copyright &copy; sNewag 2016</p>
         </div>
         <!-- /.container -->
       </footer>
