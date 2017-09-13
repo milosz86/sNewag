@@ -23,7 +23,10 @@ class NewspaperController extends Controller
      */
     public function index()
     {
-        return View::make('newspapers/index');
+      $users = User::all();
+      $services = Service::all();
+      $newspapers = Newspaper::orderBy('created_at', 'desc')->get();
+      return View::make('newspapers/index', compact('users', 'services', 'newspapers'));
     }
 
     /**
