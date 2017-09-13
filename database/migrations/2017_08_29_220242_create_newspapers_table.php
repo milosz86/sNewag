@@ -21,6 +21,7 @@ class CreateNewspapersTable extends Migration
             $table->foreign('service_id')->references('id')->on('services')->onDelete('cascade');
             $table->string('title');
             $table->longText('body');
+            $table->string('img');
             $table->timestamps();
         });
     }
