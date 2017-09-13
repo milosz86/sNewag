@@ -26,7 +26,7 @@
                 <p class="text-left">Autor:  <mark class="text-danger">{{$newspaper->user->name}} {{$newspaper->user->surname}}</mark></p>
               </div>
               <div class="col-lg-6">
-                <p class="text-right">Utworzono <mark class="text-primary">{{$newspaper->created_at}}</mark></p>
+                <p class="text-right">Utworzono <mark class="text-primary">{{$newspaper->created_at->diffForHumans()}}</mark></p>
               </div>
             </div>
 

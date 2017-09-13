@@ -13,6 +13,7 @@ use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\View;
 use Illuminate\Support\Facades\Auth;
+use Carbon\Carbon;
 
 class NewspaperController extends Controller
 {
@@ -23,6 +24,7 @@ class NewspaperController extends Controller
      */
     public function index()
     {
+      Carbon::setLocale('pl');
       $users = User::all();
       $services = Service::all();
       $newspapers = Newspaper::orderBy('created_at', 'desc')->get();
