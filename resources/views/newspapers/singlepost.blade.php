@@ -8,7 +8,7 @@
         <div class="panel panel-default">
           <div class="panel-body">
             <!-- Preview Image -->
-            <img class="img-responsive rounded center-block" src="http://placehold.it/1200x300" alt="">
+            <img class="img-responsive rounded center-block" src="img/rzepin.jpg" alt="">
             <!-- Title -->
             <hr>
             <h2 class="mt-4 text-center">{{$newspaper->title}}</h3>
@@ -22,11 +22,11 @@
 
 
             <div class="row">
-              <div class="col-lg-6 col-xs-6 col-sm-6 col-md-6">
+              <div class="col-lg-8 col-xs-8 col-sm-8 col-md-8">
                 <p class="text-left">Autor:  <span class="text-danger">{{$newspaper->user->name}} {{$newspaper->user->surname}}</span></p>
               </div>
-              <div class="col-lg-6  col-xs-6 col-sm-6 col-md-6">
-                <p class="text-right">Utworzono <span class="text-primary">{{$newspaper->created_at->diffForHumans()}}</span></p>
+              <div class="col-lg-4  col-xs-4 col-sm-4 col-md-4">
+                <p class="text-right"><span class="text-primary">{{$newspaper->created_at->diffForHumans()}}</span></p>
               </div>
             </div>
 
