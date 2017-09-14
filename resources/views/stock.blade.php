@@ -3,12 +3,14 @@
 @section('content')
   <div class="container">
 
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h3 class="text-center">STAN MAGAZYNOWY</h3>
+      </div>
+    </div>
 
-  <h3>Stan Magazynowy</h3>
 
-<br>
-
-<table class="table table-responsive">
+<table class="table table-responsive" style="background:white;">
   <thead>
       <tr>
 
