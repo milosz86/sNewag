@@ -46,6 +46,5 @@
   <!-- /.container -->
   <br>
   <br>
-<hr>
 
 @endforeach
