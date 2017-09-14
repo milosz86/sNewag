@@ -3,8 +3,15 @@
 @section('content')
   <div class="container">
 
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h3 class="text-center">EDYTUJESZ:&nbsp {{ $part->name }}</h3>
+      </div>
+    </div>
 
-    <h1>Edytujesz następującą pozycję:&nbsp {{ $part->name }}</h1>
+<div class="panel panel-default">
+  <div class="panel-body">
+    <h1></h1>
 
     <!-- if there are creation errors, they will show here -->
     {{ HTML::ul($errors->all()) }}
@@ -29,7 +36,8 @@
         {{ Form::submit('Zapisz zmiany!', array('class' => 'btn btn-primary')) }}
 
     {{ Form::close() }}
-
+  </div>
+</div>
 
 </div>
 @endsection
