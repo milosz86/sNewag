@@ -14,6 +14,7 @@ use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\View;
 use Illuminate\Support\Facades\Auth;
 use Carbon\Carbon;
+use Illuminate\Foundation\Auth\AuthenticatesUsers;
 
 class NewspaperController extends Controller
 {
@@ -38,7 +39,7 @@ class NewspaperController extends Controller
      */
     public function create()
     {
-        //
+        return View::make('newspapers/create');
     }
 
     /**
@@ -49,8 +50,37 @@ class NewspaperController extends Controller
      */
     public function store(Request $request)
     {
-        //
+      // validate
+        $rules = array(
+            'title' => 'required',
+            'body' => 'required',
+            'img' => 'required',
+        );
+
+        $validator = Validator::make(Input::all(), $rules);
+
+
+        // process the login
+        if ($validator->fails()) {
+            return Redirect::to('create')
+                ->withErrors($validator)
+                ->withInput(Input::all());
+        } else {
+            // store
+            $newspaper = new Newspaper;
+            $newspaper->user_id       = Auth::id();
+            $newspaper->service_id    = Auth::user()->service_id;
+            $newspaper->title          = Input::get('title');
+            $newspaper->body        = Input::get('body');
+            $newspaper->img        = Input::get('img');
+            $newspaper->save();
+
+            // redirect
+            Session::flash('message', 'Dodano news!');
+            return Redirect::to('/');
+        }
     }
+
 
     /**
      * Display the specified resource.
