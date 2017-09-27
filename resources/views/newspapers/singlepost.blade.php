@@ -14,7 +14,7 @@
             <h2 class="mt-4 text-center">{{$newspaper->title}}</h3>
             <hr>
             <!-- Post Content -->
-            <p class="text-justify">{{$newspaper->body}}</p>
+            <p class="text-justify">{!!$newspaper->body!!}</p>
             <hr>
           </div>
           <div class="panel-footer">
