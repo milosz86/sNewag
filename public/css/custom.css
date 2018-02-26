@@ -1,6 +1,6 @@
 
 body {
-  color:#252442; /*Kolor całego textu */
+  color:#ffffff; /*Kolor całego textu */
   background-color: #8681a1 /*Kolor tła*/
 }
 
@@ -15,7 +15,7 @@ background-color: #252442;
 /* Kolor hover'a logo */
 .navbar-default .navbar-brand:hover,
 .navbar-default .navbar-brand:focus {
-  color: #8681a1;
+  color: #FF9900;
   background-color: transparent;
 }
 
@@ -25,7 +25,7 @@ background-color: #252442;
 
 .navbar-default .navbar-nav > li > a:hover,
 .navbar-default .navbar-nav > li > a:focus {
-  color: #8681a1;
+  color: #FF9900;
   background-color: transparent;
 }
 /* Kolor tla po kliknieciu listy rozwijanej */
@@ -41,4 +41,18 @@ background-color: #252442;
 
 .dropdown-menu > li > a {
   color: #ffffff;
+}
+
+.panel {
+    background-color: #353254;
+}
+.panel-footer {
+    background-color: #676283;    
+}
+
+.text-primary {
+    color: #252442;
+}
+.text-danger {
+    color: #FF9900;
 }

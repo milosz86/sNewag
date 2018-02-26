@@ -26,7 +26,7 @@
                 <p class="text-left">Autor:  <span class="text-danger">{{$newspaper->user->name}} {{$newspaper->user->surname}}</span></p>
               </div>
               <div class="col-lg-5  col-xs-5 col-sm-5 col-md-5">
-                <p class="text-right"><span class="text-primary">{{$newspaper->created_at->diffForHumans()}}</span></p>
+                <p class="text-right"><span class="text-danger">{{$newspaper->created_at->diffForHumans()}}</span></p>
               </div>
             </div>
 
