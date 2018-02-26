@@ -1,0 +1,44 @@
+
+body {
+  color:#252442; /*Kolor całego textu */
+  background-color: #8681a1 /*Kolor tła*/
+}
+
+/* Kolor tła navbar'a */
+.navbar-default {
+background-color: #252442;
+}
+/* Kolor textu logo */
+.navbar-default .navbar-brand {
+    color: #fff;
+}
+/* Kolor hover'a logo */
+.navbar-default .navbar-brand:hover,
+.navbar-default .navbar-brand:focus {
+  color: #8681a1;
+  background-color: transparent;
+}
+
+.navbar-default .navbar-nav > li > a {
+    color: #fff; /* Kolor textu przy liście rozwijanej */
+}
+
+.navbar-default .navbar-nav > li > a:hover,
+.navbar-default .navbar-nav > li > a:focus {
+  color: #8681a1;
+  background-color: transparent;
+}
+/* Kolor tla po kliknieciu listy rozwijanej */
+.navbar-default .navbar-nav > .open > a,
+.navbar-default .navbar-nav > .open > a:hover,
+.navbar-default .navbar-nav > .open > a:focus {
+  background-color: #676283;
+  color: #ffffff;
+}
+.dropdown-menu {
+  background-color: #676283;
+}
+
+.dropdown-menu > li > a {
+  color: #ffffff;
+}
