@@ -3,15 +3,12 @@
 @section('content')
   <div class="container">
 
-    <div class="panel panel-default">
-      <div class="panel-heading">
-        <h3 class="text-center">CZĘŚCI PRZESŁANE / WYKORZYSTANE:</h3>
-      </div>
-    </div>
 
+  <h3>Części przesłane/wykorzystane:</h3>
 
+<br>
 
-  <table class="table table-responsive" style="background:white;">
+  <table class="table table-responsive">
     <thead>
         <tr>
             <td class="text-center"><h4>Nazwa</h4></td>
