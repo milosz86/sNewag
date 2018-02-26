@@ -4,17 +4,13 @@
   <div class="container">
 
 
-    <div class="panel panel-default">
-      <div class="panel-heading">
-        <h3 class="text-center">{{ $part->name }}</h3>
-      </div>
-    </div>
+
 
 
 
 <div class="jumbotron text-center">
 
-
+    <h3>{{ $part->name }}</h3>
     <p>
         <strong>Mianownica:</strong><br> {{ $part->number }}<br>
         <strong>Producent:</strong><br> {{ $part->createdby }}<br>
