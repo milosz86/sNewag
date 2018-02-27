@@ -3,33 +3,40 @@
 @section('content')
   <div class="container">
 
+    <div class="panel panel-default">
 
-    <h1>Edytujesz następującą pozycję:&nbsp {{ $part->name }}</h1>
+      <div class="panel-heading text-center"><h3>Edytujesz pozycję:&nbsp {{ $part->name }}</h3></div>
 
-    <!-- if there are creation errors, they will show here -->
-    {{ HTML::ul($errors->all()) }}
+      <div class="panel-body">
 
-    {{ Form::model($part, array('route' => array('parts.update', $part->id), 'method' => 'PUT')) }}
+
+        <!-- if there are creation errors, they will show here -->
+        {{ HTML::ul($errors->all()) }}
+
+        {{ Form::model($part, array('route' => array('parts.update', $part->id), 'method' => 'PUT')) }}
 
         <div class="form-group">
-            {{ Form::label('name', 'Nazwa części') }}
-            {{ Form::text('name', null, array('class' => 'form-control')) }}
+          {{ Form::label('name', 'Nazwa części') }}
+          {{ Form::text('name', null, array('class' => 'form-control')) }}
         </div>
 
         <div class="form-group">
-            {{ Form::label('number', 'Mianownica') }}
-            {{ Form::text('number', null, array('class' => 'form-control')) }}
+          {{ Form::label('number', 'Mianownica') }}
+          {{ Form::text('number', null, array('class' => 'form-control')) }}
         </div>
 
         <div class="form-group">
-            {{ Form::label('createdby', 'Producent') }}
-            {{ Form::text('createdby', null, array('class' => 'form-control')) }}
+          {{ Form::label('createdby', 'Producent') }}
+          {{ Form::text('createdby', null, array('class' => 'form-control')) }}
         </div>
 
         {{ Form::submit('Zapisz zmiany!', array('class' => 'btn btn-primary')) }}
 
-    {{ Form::close() }}
+        {{ Form::close() }}
 
+      </div>
 
-</div>
+    </div>
+
+  </div>
 @endsection

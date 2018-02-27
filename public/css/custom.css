@@ -47,7 +47,12 @@ background-color: #252442;
     background-color: #353254;
 }
 .panel-footer {
-    background-color: #676283;    
+    background-color: #676283;
+}
+.panel-default > .panel-heading {
+  color: #ffffff;
+  background-color: #676283;
+  border-color: #d3e0e9;
 }
 
 .text-primary {
