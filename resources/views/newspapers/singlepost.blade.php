@@ -10,12 +10,12 @@
             <!-- Preview Image -->
             <img class="img-responsive rounded center-block" src="img/{{$newspaper->img}}" alt="">
             <!-- Title -->
-            <hr>
+            <hr  style="color:#FF9900; border-color:#FF9900; background-color:#FF9900">
             <h2 class="mt-4 text-center">{{$newspaper->title}}</h3>
-            <hr>
+            <hr  style="color:#FF9900; border-color:#FF9900; background-color:#FF9900">
             <!-- Post Content -->
             <p class="text-justify">{!!$newspaper->body!!}</p>
-            <hr>
+
           </div>
           <div class="panel-footer">
             <!-- Date/Time/User -->

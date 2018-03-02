@@ -8,7 +8,7 @@
 
       <div class="panel-heading text-center"><h3>{{ $part->name }}</h3></div>
 
-      <div class="panel-body">
+      <div class="panel-body text-center">
 
         <p class="text-center"><strong>Mianownica:</strong> <span class="text-danger">{{ $part->number }}</span></p>
         <p class="text-center"><strong>Producent:</strong> <span class="text-danger">{{ $part->createdby }}</span></p>
