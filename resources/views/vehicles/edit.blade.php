@@ -3,38 +3,42 @@
 @section('content')
   <div class="container">
 
+    <div class="panel panel-default">
 
-    <h1>Edytujesz następującą pozycję:&nbsp {{ $vehicle->name }}</h1>
+      <div class="panel-heading text-center"><h3>Edytujesz pozycję:&nbsp {{ $vehicle->name }}</h3></div>
 
-    <!-- if there are creation errors, they will show here -->
-    {{ HTML::ul($errors->all()) }}
+      <div class="panel-body">
 
-    {{ Form::model($vehicle, array('route' => array('vehicles.update', $vehicle->id), 'method' => 'PUT')) }}
+        <!-- if there are creation errors, they will show here -->
+        {{ HTML::ul($errors->all()) }}
+
+        {{ Form::model($vehicle, array('route' => array('vehicles.update', $vehicle->id), 'method' => 'PUT')) }}
 
         <div class="form-group">
-            {{ Form::label('name', 'Nazwa pojazdu') }}
-            {{ Form::text('name', null, array('class' => 'form-control')) }}
+          {{ Form::label('name', 'Nazwa pojazdu') }}
+          {{ Form::text('name', null, array('class' => 'form-control')) }}
         </div>
-        
+
         <div class="form-group">
-            {{ Form::label('type', 'Typ') }}
-            {{ Form::text('type', null, array('class' => 'form-control')) }}
+          {{ Form::label('type', 'Typ') }}
+          {{ Form::text('type', null, array('class' => 'form-control')) }}
         </div>
 
         <div class="form-group">
           {{ Form::label('warranty', 'Na gwarancji') }}
           {{ Form::select('warranty', array('1' => 'TAK', '0' => 'NIE'), null, array('class' => 'form-control'))}}
         </div>
-
+        
         <div class="form-group">
-            {{ Form::label('production_date', 'Data produkcji') }}
-            {{ Form::date('production_date', null, array('class' => 'form-control')) }}
+          {{ Form::label('production_date', 'Data produkcji') }}
+          {{ Form::date('production_date', null, array('class' => 'form-control')) }}
         </div>
 
         {{ Form::submit('Zapisz zmiany!', array('class' => 'btn btn-primary')) }}
 
-    {{ Form::close() }}
+        {{ Form::close() }}
 
-
-</div>
+      </div>
+    </div>
+  </div>
 @endsection

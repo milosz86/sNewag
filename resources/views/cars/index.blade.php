@@ -3,42 +3,46 @@
 @section('content')
   <div class="container">
 
+    <div class="panel panel-default">
 
-  <h3>Samochody:</h3>
+      <div class="panel-heading text-center"><h3>Flota</h3></div>
 
-<br>
+      <div class="panel-body text-center">
 
-  <table class="table table-responsive">
-    <thead>
-        <tr>
 
-            <td class="text-center"><h4>Nazwa</h4></td>
-            <td class="text-center"><h4>Przebieg</h4></td>
-            <td class="text-center"><h4></h4></td>
-        </tr>
-    </thead>
-    <tbody>
-    @foreach($cars as $key => $value)
-        <tr>
 
-            <td class="text-center">{{ $value->name }}
-              {{ Form::open(array('url' => 'cars/' . $value->id)) }}
+        <table class="table table-responsive">
+          <thead>
+            <tr>
+
+              <td class="text-center"><h4>Nazwa</h4></td>
+              <td class="text-center"><h4>Przebieg</h4></td>
+              <td class="text-center"><h4></h4></td>
+            </tr>
+          </thead>
+          <tbody>
+            @foreach($cars as $key => $value)
+              <tr>
+
+                <td class="text-center">{{ $value->name }}
+                  {{ Form::open(array('url' => 'cars/' . $value->id)) }}
                   {{ Form::hidden('_method', 'DELETE') }}
                   {{ Form::submit('Usuń', array('class' => 'btn btn-xs btn-danger')) }}
-              {{ Form::close() }}
-            </td>
-            <td class="text-center">{{ $value->distance }}</td>
-            <td class="text-center">
-                <div class="btn-group-vertical">
-                <a class="btn btn-xs btn-success" href="{{ URL::to('cars/' . $value->id) }}">Szczegóły</a>
-                <a class="btn btn-xs btn-info" href="{{ URL::to('cars/' . $value->id . '/edit') }}">Edytuj</a>
-              </div><br>
+                  {{ Form::close() }}
+                </td>
+                <td class="text-center">{{ $value->distance }}</td>
+                <td class="text-center">
+                  <div class="btn-group-vertical">
+                    <a class="btn btn-xs btn-success" href="{{ URL::to('cars/' . $value->id) }}">Szczegóły</a>
+                    <a class="btn btn-xs btn-info" href="{{ URL::to('cars/' . $value->id . '/edit') }}">Edytuj</a>
+                  </div><br>
 
-            </td>
-        </tr>
-    @endforeach
-    </tbody>
-</table>
-
+                </td>
+              </tr>
+            @endforeach
+          </tbody>
+        </table>
+      </div>
+    </div>
   </div>
 @endsection

@@ -3,24 +3,29 @@
 @section('content')
   <div class="container">
 
+    <div class="panel panel-default">
 
-<h1>Edit {{ $service->name }}</h1>
+      <div class="panel-heading text-center"><h3>Edytujesz serwis:&nbsp {{ $service->name }}</h3></div>
 
-<!-- if there are creation errors, they will show here -->
-{{ HTML::ul($errors->all()) }}
+      <div class="panel-body">
 
-{{ Form::model($service, array('route' => array('services.update', $service->id), 'method' => 'PUT')) }}
+        <!-- if there are creation errors, they will show here -->
+        {{ HTML::ul($errors->all()) }}
 
-    <div class="form-group">
-        {{ Form::label('name', 'Nazwa serwisu') }}
-        {{ Form::text('name', null, array('class' => 'form-control')) }}
+        {{ Form::model($service, array('route' => array('services.update', $service->id), 'method' => 'PUT')) }}
+
+        <div class="form-group">
+          {{ Form::label('name', 'Nazwa serwisu') }}
+          {{ Form::text('name', null, array('class' => 'form-control')) }}
+        </div>
+
+
+
+        {{ Form::submit('Edytuj!', array('class' => 'btn btn-primary')) }}
+
+        {{ Form::close() }}
+      </div>
     </div>
 
-
-
-    {{ Form::submit('Edytuj!', array('class' => 'btn btn-primary')) }}
-
-{{ Form::close() }}
-
-</div>
+  </div>
 @endsection
